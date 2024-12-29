@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="show-guide" onclick="showGuide()">
+        <i class="fa-solid fa-caret-down"></i>
+    </button>
+
+    <div class="app-guide">
+        <i class="fa-solid fa-xmark" id="hide-guide" onclick="hideGuide()"></i>
+        <h2 class="title">Instructions</h2>
+        <ul class="instructions">
+            <li class="item">
+                <p>
+                    To Add A Task Press Enter <i class="fa-solid fa-right-to-bracket"></i> In The Keyboard 
+                    While Writing In The Task Input.
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    When Editing An Exist Task Click In The Update Icon <i class="fa-solid fa-thumbtack"></i>,
+                    It Will Show In The Task Input.
+                </p>
+            </li>
+            <li class="item warning">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>
+                    While Updating The Task Don't Press Enter <i class="fa-solid fa-right-to-bracket"></i> In The Keyboard 
+                    It Will Cause A Problem. 
+                </p>
+            </li>
+            <li class="item warning">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>
+                    Make Sure To Fill The Task Input While Updating Or Adding A Task.
+                </p>
+            </li>
+            <li class="item warning">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>
+                    If You Set The Task To Be Completed And Want To Unset It Its May Cause Some Mistakes So,
+                    Make Sure To Reload <i class="fa-solid fa-rotate-right"></i> The Page.
+                </p>
+            </li>
+            <li class="item warning">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>
+                    When Edited A Task Its May Set The Task Content To Nothing So, Pay Attention.
+                </p>
+            </li>
+            <li class="item warning">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <p>
+                    Each Time You Update A Task Make Sure To Reload <i class="fa-solid fa-rotate-right"></i> The Page.
+                </p>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <div class="input-box">
+            <input type="text" id="task-input" placeholder="Add a new task">
+            <i class="fa-solid fa-bars-staggered" id="bars"></i>
+            <i class="fa-solid fa-thumbtack" id="update-btn" title="Update Task" i></i>
+        </div>
+
+        <div class="controls"> 
+            <div class="filters">
+                <span class="filter active" data-filter="all">All</span>
+                <span class="filter" data-filter="pending">Pending</span>
+                <span class="filter" data-filter="completed">Completed</span>
+            </div>
+            <button id="clear-btn">Clear All</button>
+        </div>
+        
+        <ul class="tasks"></ul>
+    </div>
+
+
+    <script src="https://kit.fontawesome.com/8277a9fb3e.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>

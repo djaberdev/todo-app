@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul li {
+    list-style: none;
+}
+
+body {
+    background-color: #24273b;
+}
+
+.container { 
+    max-width: 450px;
+    margin: 100px auto 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.container .input-box {
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+.container .input-box input {
+    padding: 0 0 0 50px;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    transition: 0.3s ease;
+    font-size: 18px;
+    font-weight: 500;
+    color: #24273b;
+}
+
+.container .input-box input:focus {
+    border-color: #24273b;
+}
+
+.container .input-box input::placeholder {
+    color: #ccc;
+    font-weight: 400;
+}
+
+.container .input-box #bars {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #ccc;
+    transition: 0.3s ease;
+}
+
+.container .input-box input:focus + #bars {
+    color: #24273b;
+}
+
+.container .input-box #update-btn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: hsl(231, 16%, 30%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    scale: 0;
+}
+
+.container .input-box #update-btn.show {
+    scale: 1;
+}
+
+.container .controls {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.container .controls::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 120%;
+    background-color: #ccc;
+}
+
+.container .controls .filters .filter {
+    font-size: 17px;
+    font-weight: 500;
+    color: #8f8f8f;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+.container .controls .filters .filter:first-child {
+    margin-left: 0;
+}
+
+.container .controls .filters .filter:hover,
+.container .controls .filters .filter.active {
+    color: #24273b;
+}
+
+.container .controls #clear-btn {
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+    background-color: hsl(231, 16%, 30%);
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.container .controls #clear-btn:hover,
+.container .input-box #update-btn:hover {
+    background-color: #24273b;
+}
+
+.container .controls #clear-btn:active,
+.container .input-box #update-btn:active {
+    scale: 0.95;
+}
+
+.tasks {
+    margin-bottom: 30px;
+}
+
+.tasks .alert-text {
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.tasks .task-box {
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+}
+
+.tasks .task-box:last-child {
+    border-bottom: none;
+}
+
+.tasks .task-box input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.tasks .task-box label {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #ddd;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.tasks .task-box label > i {
+    font-size: 13px;
+    color: #24273b;
+    transition: 0.4s ease;
+}
+
+.tasks .task-box label:active {
+    scale: 0.95;
+}
+
+.tasks .task-box input[type="checkbox"]:checked + label,
+.tasks .task-box.completed input[type="checkbox"] + label {
+    background-color: #24273b;
+}
+
+.tasks .task-box input[type="checkbox"]:checked + label > i,
+.tasks .task-box.completed input[type="checkbox"] + label > i {
+    color: white;
+}
+
+.tasks .task-box .task-content {
+    font-size: 17px;
+    margin-left: 12px;
+}
+
+.tasks .task-box input[type="checkbox"]:checked + label + .task-content,
+.tasks .task-box.completed input[type="checkbox"] + label + .task-content{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.tasks .task-box #show-menu {
+    padding: 2px 6px;
+    border-radius: 4px;
+    background-color: transparent;
+    margin-left: auto;
+    font-size: 20px;
+    color: #777;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.tasks .task-box #show-menu:hover {
+    background-color: #eee;
+}
+
+.tasks .task-box #show-menu:hover {
+    color: #24273b;
+}
+
+.task-menu {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+    position: absolute;
+    right: 35px;
+    top: 18px;
+    z-index: 5;
+    transition: 0.3s ease;
+    scale: 0;
+}
+
+.task-menu.show {
+    scale: 1;
+}
+
+.task-menu li {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.task-menu li:hover {
+    background-color: #f9f9f9;
+}
+
+.task-menu li span {
+    font-size: 15px;
+}
+
+.error-box {
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.error-box img {
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.error-box .alert-text {
+    margin-top: 0;
+}
+
+#show-guide {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 20px;
+    background-color: white;
+    border-radius: 0 0 6px 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+#show-guide:hover {
+    background-color: #f1f1f1;
+}
+
+#show-guide > i {
+    font-size: 20px;
+    color: #24273b;
+}
+
+.app-guide {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 10;
+    background-color: #24273b;
+    width: 100%;
+    height: 100vh;
+    padding: 50px 20px 20px 20px;
+    transition: 1s ease;
+    overflow: auto;
+}
+
+.app-guide.show {
+    top: 0;
+}
+
+.app-guide #hide-guide {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.app-guide #hide-guide:active {
+    scale: 0.95;
+}
+
+.app-guide .title {
+    font-size: 24px;
+    color: #eee;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+.app-guide .instructions {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.app-guide .instructions .item {
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #393c4e;
+    border: 2px solid #aaaaaa5d;
+}
+
+.app-guide .instructions .item.warning {
+    border-color: #f44336a6;
+}
+
+.app-guide .instructions .item p {
+    font-size: 15px;
+    color: #eeeeeeaf;
+}
+
+.app-guide .instructions .item p i {
+    font-size: 16px;
+    color: #eee;
+    margin: 0 5px;
+}
+
+.app-guide .instructions .item.warning > i {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background-color: #f44336;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,39 @@
+- This App Will Be Done 'Inshaallah' In 8 Part Which Are:
+--------------------
+[1] Create HTML Markup & Styling ✅
+---
+[2] Add Fake Data To See The Styling ✅
+-----------------
+- Starts JS Logic
+-----------------
+[3] Show The Added Task By The 'showTodo() Function' ✅
+---
+[4] Show The Task Menu By The 'showMenu() Function' ✅ 
+---
+[5] Update The Task Content By The 'editTask() Function' ✅
+---
+[6] Remove The Specified Task By The 'removeTask() Function' ✅   
+---
+[7] Remove All The Added Tasks Using The 'clearAll() Function' ✅
+---
+[8] Manage The Filters Work & Its Status ('all', 'pending', 'completed') ✅
+---
+[9] Manage All The Data Saving Precess Using Local Storage ✅
+---
+[10] Build A Guide For The App To Use It Correctly & Clarificate Some Errors ✅
+
+- Instructions To Use The App Correctly:
+-----------------
+[1] To Add A Task Press Enter In The Keyboard While Writing In The Task Input
+---
+[2] When Editing An Exist Task Click In The Update Icon, It Will Show In The Task Input
+---
+[3] While Updating The Task Don't Press Enter In The Keyboard It Will Cause A Problem  
+---
+[4] Make Sure To Fill The Task Input While Updating Or Adding A Task
+---
+[5] If You Set The Task To Be Completed And Want To Unset It Its May Cause Some Mistakes So, Make Sure To Reload The Page  
+---
+[6] Each Time You Update A Task Make Sure To Reload The Page
+---
+[7] When Edited A Task Its May Set The Task Content To Nothing So, Pay Attention
