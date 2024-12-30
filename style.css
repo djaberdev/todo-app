@@ -13,6 +13,7 @@ ul li {
 
 body {
     background-color: #24273b;
+    overflow: hidden;
 }
 
 .container { 
