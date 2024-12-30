@@ -319,7 +319,7 @@ body {
 
 .app-guide {
     position: fixed;
-    top: -100%;
+    top: -150%;
     left: 0;
     z-index: 10;
     background-color: #24273b;
